@@ -6,6 +6,7 @@ import './App.css';
 import Definitions from './Components/Definitions/Definitions';
 import Switch from '@mui/material/Switch';
 import { styled } from '@mui/material/styles';
+// import trees from './Images/trees.jpg'
 
 function App() {
   const [meanings, setMeanings] = useState([])
@@ -82,10 +83,11 @@ function App() {
     backgroundColor: lightMode? '#fff' :'#282c34', 
     color: lightMode? 'black' : 'white',
     transition:'all 0.5 linear',
+    // backgroundImage: `url(${trees})`
     }}>
       <Container maxWidth='md' style={{display:'flex', flexDirection:'column', height:'100vh', justifyContent:'space-evenly'}}>
-          <div style={{position:'absolute', top:0, right: 15, paddingTop:10}}>
-            <span>{lightMode ? 'Dark' : 'Light'} Mode</span>
+          <div style={{position:'absolute', top:0, right: 15, paddingTop:10, display:'flex', flexDirection:'row'}}>
+            <span style={{paddingRight:'20px'}}>{lightMode ? 'Dark' : 'Light'} Mode</span>
             <DarkModeSwitch 
             checked={lightMode} 
             onChange={()=> setLightMode(!lightMode)}/>
