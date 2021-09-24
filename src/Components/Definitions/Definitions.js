@@ -26,7 +26,7 @@ const Definitions = ({word, category,meanings, lightMode}) => {
                 mean.meanings.map((item)=>(
             // we are not mapping through the items of the mean to get the definitions of each item in the mean array.
                    item.definitions.map((def) => (
-                    //    I'm returning a div with some embedded styling and calling the for the items that are being mapped through to display inside the curly braces.
+                    //    I'm returning a div with some embedded styling and calling the for the items that are being mapped through to display isn
                        <div 
                        className='singleMean' 
                     //    in styling I'm checking to see if lightMode exist and if it does I want the screen to be a certain color if not it will be white.

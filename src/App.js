@@ -56,27 +56,26 @@ function App() {
     },
   }));
 
-  const dictionaryApi = async()=>{
-    try{
-      // fetching the api
-      // use the ` to change the api`
-      const data = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`)
-      // checking to see what is being pulled in
-      
-      setMeanings(data.data)
+  const dictionaryApi = async () => {
+    try {
+      const data = await axios.get(
+        `https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`
+      );
+      setMeanings(data.data);
     } catch (error) {
       console.log(error);
     }
-  }
-  // console.log(meanings)
+  };
+
+  console.log(meanings);
 
   // useEffect is called whenever your component is first time rendered
   useEffect(() => {
     // calling the above function
     dictionaryApi();
     // if you put anything inside of the [] these are call dependency
-  }, [word, category])
-
+  }, [word, category]);
+  
   return (
     <div className='App' 
     style={{height:'100vh', 
